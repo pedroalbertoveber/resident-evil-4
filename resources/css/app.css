@@ -3,3 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+  .link-default {
+    @apply font-bold cursor-pointer hover:text-red-500 duration-150;
+  }
+
+  .btn-default {
+    @apply bg-red-500 py-1 font-bold text-lg rounded-lg mb-2 text-gray-200 hover:bg-red-600 duration-150;
+  }
+
+  .form-group {
+    @apply flex flex-col items-start mb-2 w-full;
+  }
+
+  .label-default {
+    @apply text-lg text-gray-200 font-bold mb-1;
+  }
+
+  .input-default {
+    @apply w-full py-1 px-2 rounded-lg bg-gray-600 ring-1 ring-gray-400 text-gray-300;
+  }
+}
