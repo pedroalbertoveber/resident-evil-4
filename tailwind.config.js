@@ -6,7 +6,12 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Roboto Condensed', 'Arial', 'Helvetica', 'sans-serif'],
+        'upper': 'Bebas Neue',
+      },
+    },
   },
   plugins: [],
 }
