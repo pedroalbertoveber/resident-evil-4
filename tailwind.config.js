@@ -12,6 +12,9 @@ module.exports = {
         'sans': ['Roboto Condensed', 'Arial', 'Helvetica', 'sans-serif'],
         'upper': 'Bebas Neue',
       },
+      backgroundImage: {
+        'church': "url('../../public/img/church-bg.jpg')",
+      }
     },
   },
   plugins: [],
