@@ -30,10 +30,10 @@
       </div>
     </header>
     <nav class="w-full p-4 border-b-2 border-gray-500">
-      <ul class="flex flex-wrap justify-around">
-        <li><a href="#" class="link-default">Caracters</a></li>
+      <ul class="flex flex-wrap justify-around max-w-[1200px] mx-auto">
+        <li><a href="{{ route('home') }}" class="link-default">Home</a></li>
+        <li><a href="{{ route('characters.index') }}" class="link-default">Characters</a></li>
         <li><a href="#" class="link-default">Treasures</a></li>
-        <li><a href="#" class="link-default">Bosses</a></li>
         <li><a href="#" class="link-default">Areas</a></li>
         <li><a href="#" class="link-default">Guns</a></li>
       </ul>
