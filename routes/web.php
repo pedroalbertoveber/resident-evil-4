@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AreasController;
 use App\Http\Controllers\CharactersController;
+use App\Http\Controllers\GunsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,26 @@ Route::delete('/areas/delete/{id}', [AreasController::class, 'delete'])
     ->name('areas.delete');
 
 
+Route::get('/guns', [GunsController::class, 'index'])
+    ->name('guns.index');
+
+Route::get('/guns/edit/{id}', [GunsController::class, 'edit'])
+    ->name('guns.edit');
+
+Route::get('/guns/create', [GunsController::class, 'create'])
+    ->name('guns.create');
+
+Route::get('/guns/{id}', [GunsController::class, 'show'])
+    ->name('guns.show');
+
+Route::put('/guns/update/{id}', [GunsController::class, 'update'])
+    ->name('guns.update');
+
+Route::post('/guns/store', [GunsController::class, 'store'])
+    ->name('guns.store');
+    
+Route::delete('/guns/delete/{id}', [GunsController::class, 'delete'])
+    ->name('guns.delete');
 
 // PUBLIC ROUTES
 

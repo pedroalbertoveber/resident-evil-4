@@ -26,6 +26,10 @@
     @apply w-full py-1 px-2 rounded-lg bg-gray-600 ring-1 ring-gray-400 text-gray-300;
   }
 
+  .separater {
+    @apply sm:flex gap-4;
+  }
+
   .textarea-default {
     @apply py-1 px-2 rounded-lg bg-gray-600 ring-1 ring-gray-400 w-full;
   }
@@ -51,7 +55,7 @@
   }
 
   .item-container-item {
-    @apply w-full flex flex-col items-center border-2 border-gray-200 pb-2 rounded-lg cursor-pointer relative sm:w-[48%] sm:mx-[1%] lg:w-[31%];
+    @apply w-full flex flex-col items-center border-2 border-gray-200 pb-2 rounded-lg cursor-pointer relative sm:w-[48%] sm:mx-[1%] lg:w-[31%] mt-6;
   }
 
   .item-container-img {

@@ -35,7 +35,7 @@
         <li><a href="{{ route('characters.index') }}" class="link-default">Characters</a></li>
         <li><a href="#" class="link-default">Treasures</a></li>
         <li><a href="{{ route('areas.index') }}" class="link-default">Areas</a></li>
-        <li><a href="#" class="link-default">Guns</a></li>
+        <li><a href="{{ route('guns.index') }}" class="link-default">Guns</a></li>
       </ul>
     </nav>
     @if($errors->any())
