@@ -47,7 +47,7 @@
   }
 
   .item-container {
-    @apply w-full flex flex-col items-center sm:flex-row sm:flex-wrap py-8;
+    @apply w-full flex flex-col items-center sm:flex-row sm:flex-wrap py-8 gap-2 sm:gap-0;
   }
 
   .item-container-item {

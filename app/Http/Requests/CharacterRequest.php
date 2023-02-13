@@ -25,7 +25,6 @@ class CharacterRequest extends FormRequest
     {
         return [
             'name' => ['required', 'min:5', 'max:255'],
-            'image' => ['required'],
             'resume' => ['required', 'min:10' , 'max:255'],
         ];
     }

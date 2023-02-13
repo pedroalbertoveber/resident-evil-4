@@ -10,30 +10,56 @@ use Illuminate\Http\Request;
 
 class CharactersController extends Controller
 {
-    function __construct(private CharacterRepository $repository) {}
+    public function __construct(private CharacterRepository $repository) {}
 
-    function index(Request $request) 
+    public function index(Request $request) 
     {
-        if ($request->name) {
-            $characters = Character::where('name', $request->name)->get();
-        }
-
-        $characters = Character::all();
+        $characters = $this->repository->index($request);
 
         return view('characters.index')
             ->with('characters', $characters);
     }
 
-    function create() 
-    {
+    public function create() 
+    {   
         return view('characters.create');
     }
 
-    function store(CharacterRequest $request)
+    public function store(CharacterRequest $request)
     {
         $character = $this->repository->store($request);
 
         return to_route('characters.index')
             ->with('success', 'Character '. $character . ' created successfully!');
+    }
+
+    public function show(int $id)
+    {
+        $character = $this->repository->show($id);
+        return view('characters.show')
+            ->with('character', $character);
+    }
+
+    public function edit(int $id)
+    {
+        $character = $this->repository->show($id);
+
+        return view('characters.edit')
+            ->with('character', $character);
+    }
+
+    public function update(CharacterRequest $request, int $id)
+    {
+        $character = $this->repository->update($request, $id);
+
+        return to_route('characters.index')
+            ->with('success', 'Character ' . $character->name . ' Updated successfully!');
+    }
+
+    public function delete(int $id)
+    {
+        $this->repository->delete($id);
+        return to_route('characters.index')
+            ->with('success', 'Character removed successfully!');
     }
 }
