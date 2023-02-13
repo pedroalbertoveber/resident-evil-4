@@ -34,7 +34,7 @@
         <li><a href="{{ route('home') }}" class="link-default">Home</a></li>
         <li><a href="{{ route('characters.index') }}" class="link-default">Characters</a></li>
         <li><a href="#" class="link-default">Treasures</a></li>
-        <li><a href="#" class="link-default">Areas</a></li>
+        <li><a href="{{ route('areas.index') }}" class="link-default">Areas</a></li>
         <li><a href="#" class="link-default">Guns</a></li>
       </ul>
     </nav>

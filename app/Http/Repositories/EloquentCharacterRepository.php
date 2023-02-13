@@ -60,16 +60,13 @@ class EloquentCharacterRepository implements CharacterRepository {
       if ($request->hasFile('image')) {
 
         $image = $data['image']
-        ->store('character', 'public');
+          ->store('character', 'public');
 
-        $character->name = $data['name'];
         $character->image = $image;
-        $character->resume = $data['resume'];
       } 
-      else {
-        $character->name = $data['name'];
-        $character->resume = $data['resume'];
-      }
+
+      $character->name = $data['name'];
+      $character->resume = $data['resume'];
 
       $character->update();
 

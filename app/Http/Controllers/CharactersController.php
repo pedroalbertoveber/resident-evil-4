@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\CharacterRepository;
 use App\Http\Requests\CharacterRequest;
-use App\Models\Character;
 use Illuminate\Http\Request;
 
 class CharactersController extends Controller

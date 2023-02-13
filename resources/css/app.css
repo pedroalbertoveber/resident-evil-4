@@ -55,7 +55,7 @@
   }
 
   .item-container-img {
-    @apply w-full object-cover rounded-lg hover:brightness-75 duration-150;
+    @apply w-full h-[250px] md:h-[200px] object-cover rounded-lg hover:brightness-75 duration-150;
   }
 
   .item-container-title {

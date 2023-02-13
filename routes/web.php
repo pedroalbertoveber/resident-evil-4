@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AreasController;
 use App\Http\Controllers\CharactersController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,8 +25,30 @@ Route::put('/characters/update/{id}', [CharactersController::class, 'update'])
 Route::delete('/characters/delete/{id}', [CharactersController::class, 'delete'])
     ->name('characters.delete');
 
+Route::get('/areas/create', [AreasController::class, 'create'])
+    ->name('areas.create');
+
+Route::post('/areas/store', [AreasController::class, 'store'])
+    ->name('areas.store');
+
+Route::get('/areas/edit/{id}', [AreasController::class, 'edit'])
+    ->name('areas.edit');
+
+Route::put('/areas/update/{id}', [AreasController::class, 'update'])
+    ->name('areas.update');
+
+Route::delete('/areas/delete/{id}', [AreasController::class, 'delete'])
+    ->name('areas.delete');
+
+
 
 // PUBLIC ROUTES
+
+Route::get('/areas', [AreasController::class, 'index'])
+    ->name('areas.index');
+
+Route::get('/areas/{id}', [AreasController::class, 'show'])
+    ->name('areas.show');
 
 Route::get('/users/register', [UserController::class, 'register'])
     ->name('users.register');
