@@ -4,7 +4,9 @@
       <img src="/img/characters-bg.jpg" alt="All characters" class="thumbnail-img">
       <h1 class="thumbnail-title">Create Character</h1>
     </figure>
-    <form class="form-default mt-4">
+    <form class="form-default mt-4" action="{{ route('characters.store') }}" method="POST" enctype="multipart/form-data">
+      @csrf
+
       <div class="form-group">
         <label for="image" class="label-default">Image</label>
         <input type="file" name="image" id="image" class="input-default cursor-pointer" required accept="image/jpg, image/jpeg, image/png">

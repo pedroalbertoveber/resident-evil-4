@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Repositories\EloquentCharacterRepository;
-use App\Http\RepositoriesRepositories\CharacterRepository;
+use App\Http\Repositories\CharacterRepository;
 use Illuminate\Support\ServiceProvider;
 
 class CharacterProvider extends ServiceProvider

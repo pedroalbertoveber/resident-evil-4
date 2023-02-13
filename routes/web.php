@@ -32,5 +32,8 @@ Route::post('/users/logout', [UserController::class, 'logout'])
     ->name('users.logout');
 
 Route::get('/characters/create', [CharactersController::class, 'create'])
-->name('characters.create');
+    ->name('characters.create');
+
+Route::post('/characters/store', [CharactersController::class, 'store'])
+    ->name('characters.store');
 

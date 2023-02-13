@@ -45,4 +45,20 @@
   .thumbnail-title {
     @apply absolute top-1/2 left-1/2 text-6xl font-upper -translate-x-1/2 -translate-y-1/2;
   }
+
+  .item-container {
+    @apply w-full flex flex-col items-center sm:flex-row sm:flex-wrap py-8;
+  }
+
+  .item-container-item {
+    @apply w-full flex flex-col items-center border-2 border-gray-200 pb-2 rounded-lg cursor-pointer relative sm:w-[48%] sm:mx-[1%] lg:w-[31%];
+  }
+
+  .item-container-img {
+    @apply w-full object-cover rounded-lg hover:brightness-75 duration-150;
+  }
+
+  .item-container-title {
+    @apply text-3xl mt-2 font-upper absolute -translate-x-1/2 left-1/2 bottom-2;
+  }
 }

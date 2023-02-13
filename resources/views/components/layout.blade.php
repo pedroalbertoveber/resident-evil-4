@@ -39,7 +39,7 @@
       </ul>
     </nav>
     @if($errors->any())
-    <div class="bg-black w-full max-w-[1400px] mb-4 mx-auto p-2 border-red-500 border-2 rounded-lg">
+    <div class="bg-black w-full max-w-[1200px] my-4 mx-auto p-2 border-red-500 border-2 rounded-lg">
       <ul>
         @foreach ($errors->all() as $error)
           <li class="text-lg text-red-500"><i class="bi bi-exclamation-circle mr-2"></i> {{ $error }}</li>

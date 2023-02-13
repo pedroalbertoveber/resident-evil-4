@@ -16,14 +16,15 @@ class EloquentCharacterRepository implements CharacterRepository {
     return $characters;
   }
 
-  public function store(CharacterRequest $request) {
+  public function store(CharacterRequest $request): Character {
     return DB::transaction(function () use ($request) {
 
       $data = $request->except(['_token']);
-      
+
       if ($request->hasFile('image')) {
+        
         $image = $data['image']
-          ->store('characters_images', 'public');
+          ->store('character', 'public');
       }
 
       $newCharacter = Character::create([
