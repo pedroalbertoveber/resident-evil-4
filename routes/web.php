@@ -3,6 +3,7 @@
 use App\Http\Controllers\AreasController;
 use App\Http\Controllers\CharactersController;
 use App\Http\Controllers\GunsController;
+use App\Http\Controllers\TreasuresController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,22 @@ Route::put('/areas/update/{id}', [AreasController::class, 'update'])
 Route::delete('/areas/delete/{id}', [AreasController::class, 'delete'])
     ->name('areas.delete');
 
+
+
+Route::get('/treasures/create', [TreasuresController::class, 'create'])
+    ->name('treasures.create');
+
+Route::get('/treasures/edit/{id}', [TreasuresController::class, 'edit'])
+    ->name('treasures.edit');
+
+Route::post('/treasures/store', [TreasuresController::class, 'store'])
+    ->name('treasures.store');
+
+Route::put('/treasures/update/{id}', [TreasuresController::class, 'update'])
+    ->name('treasures.update');
+
+Route::delete('/treasures/delete/{id}', [TreasuresController::class, 'delete'])
+    ->name('treasures.delete');
 
 Route::get('/guns', [GunsController::class, 'index'])
     ->name('guns.index');
@@ -89,9 +106,11 @@ Route::get('/characters', [CharactersController::class, 'index'])
 Route::get('/characters/{id}', [CharactersController::class, 'show'])
     ->name('characters.show');
 
+Route::get('/treasures', [TreasuresController::class, 'index'])
+    ->name('treasures.index');
 
-
-
+Route::get('/treasures/{id}', [TreasuresController::class, 'show'])
+    ->name('treasures.show');
 
 Route::get('/', function () {
     return view('home');

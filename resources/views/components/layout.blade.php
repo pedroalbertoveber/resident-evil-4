@@ -33,7 +33,7 @@
       <ul class="flex flex-wrap justify-around max-w-[1200px] mx-auto">
         <li><a href="{{ route('home') }}" class="link-default">Home</a></li>
         <li><a href="{{ route('characters.index') }}" class="link-default">Characters</a></li>
-        <li><a href="#" class="link-default">Treasures</a></li>
+        <li><a href="{{ route('treasures.index') }}" class="link-default">Treasures</a></li>
         <li><a href="{{ route('areas.index') }}" class="link-default">Areas</a></li>
         <li><a href="{{ route('guns.index') }}" class="link-default">Guns</a></li>
       </ul>

@@ -15,7 +15,10 @@ class EloquentTreasureRepository implements TreasureRepository {
       return $trasures;
     }
 
-    $trasures = Treasure::all();
+    $trasures = DB::table('treasures')
+      ->orderBy('rarity', 'asc')
+      ->get();
+
     return $trasures;
   }
 
@@ -60,7 +63,7 @@ class EloquentTreasureRepository implements TreasureRepository {
       }
 
       $tresure->name = $data['name'];
-      $tresure->rarity = $data['name'];
+      $tresure->rarity = $data['rarity'];
       $tresure->price = $data['price'];
       $tresure->areas = $data['areas'];
 
