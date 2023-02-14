@@ -65,4 +65,12 @@
   .item-container-title {
     @apply text-3xl mt-2 font-upper absolute -translate-x-1/2 left-1/2 bottom-2;
   }
+
+  .sub-division {
+    @apply w-full border-b-2 border-gray-200;
+  }
+
+  .sub-division-title {
+    @apply text-4xl font-bold py-4;
+  }
 }

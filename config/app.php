@@ -186,6 +186,7 @@ return [
         App\Providers\AreaProvider::class,
         App\Providers\GunProvider::class,
         App\Providers\TreasureProvider::class,
+        App\Providers\ChapterProvider::class,
 
         /*
          * Package Service Providers...

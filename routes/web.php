@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AreasController;
+use App\Http\Controllers\ChaptersController;
 use App\Http\Controllers\CharactersController;
 use App\Http\Controllers\GunsController;
 use App\Http\Controllers\TreasuresController;
@@ -42,7 +43,20 @@ Route::put('/areas/update/{id}', [AreasController::class, 'update'])
 Route::delete('/areas/delete/{id}', [AreasController::class, 'delete'])
     ->name('areas.delete');
 
+Route::get('/chapters/edit/{id}', [ChaptersController::class, 'edit'])
+    ->name('chapters.edit');
 
+Route::get('/chapters/create', [ChaptersController::class, 'create'])
+    ->name('chapters.create');
+
+Route::post('/chapters/store', [ChaptersController::class, 'store'])
+    ->name('chapters.store');
+
+Route::put('/chapters/update/{id}', [ChaptersController::class, 'update'])
+    ->name('chapters.update');
+
+Route::delete('/chapters/delete/{id}', [ChaptersController::class, 'delete'])
+    ->name('chapters.delete');
 
 Route::get('/treasures/create', [TreasuresController::class, 'create'])
     ->name('treasures.create');
@@ -112,6 +126,8 @@ Route::get('/treasures', [TreasuresController::class, 'index'])
 Route::get('/treasures/{id}', [TreasuresController::class, 'show'])
     ->name('treasures.show');
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [ChaptersController::class, 'index'])
+    ->name('home');
+
+Route::get('/chapters/{id}', [ChaptersController::class, 'show'])
+    ->name('chapters.show');
