@@ -17,6 +17,6 @@
       </div>
     </div>
     <x-actions type="guns" :id="$gun->id" />
-    <p>Do you want to go back to all characters? <a href="{{ route('guns.index') }}" class='link-default'>Click here</a></p>
+    <p>Do you want to go back to all weapons? <a href="{{ route('guns.index') }}" class='link-default'>Click here</a></p>
   </section>
 </x-layout>

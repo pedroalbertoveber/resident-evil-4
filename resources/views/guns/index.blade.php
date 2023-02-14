@@ -2,7 +2,7 @@
   <section class="w-full">
     <figure class="thumbnail">
       <img src="/img/gun-bg.jpg" alt="All guns" class="thumbnail-img">
-      <h1 class="thumbnail-title">Guns</h1>
+      <h1 class="thumbnail-title">Weapons</h1>
     </figure>
     <div class="item-container">
       @foreach($guns as $gun)
