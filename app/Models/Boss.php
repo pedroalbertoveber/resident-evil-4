@@ -4,27 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Chapter;
-use App\Models\Boss;
+use App\Models\Area;
 
-class Area extends Model
+class Boss extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
         'image',
+        'name',
+        'area_id',
         'description',
     ];
 
-    public function chapters()
-    {
-        return $this->hasMany(Chapter::class, 'area_id');
-    }
-
     public function bosses()
     {
-        return $this->hasMany(Boss::class, 'area_id');
+        return $this->belongsTo(Area::class, 'area_id');
     }
-
 }

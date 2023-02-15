@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AreasController;
+use App\Http\Controllers\BossesController;
 use App\Http\Controllers\ChaptersController;
 use App\Http\Controllers\CharactersController;
 use App\Http\Controllers\GunsController;
@@ -94,6 +95,21 @@ Route::post('/guns/store', [GunsController::class, 'store'])
 Route::delete('/guns/delete/{id}', [GunsController::class, 'delete'])
     ->name('guns.delete');
 
+Route::get('/bosses/create', [BossesController::class, 'create'])
+    ->name('bosses.create');
+
+Route::get('/bosses/edit/{id}', [BossesController::class, 'edit'])
+    ->name('bosses.edit');
+
+Route::put('/bosses/update/{id}', [BossesController::class, 'update'])
+    ->name('bosses.update');
+
+Route::post('/bosses/store', [BossesController::class, 'store'])
+    ->name('bosses.store');
+
+Route::delete('/bosses/delete/{id}', [BossesController::class, 'delete'])
+    ->name('bosses.delete');
+
 // PUBLIC ROUTES
 
 Route::get('/areas', [AreasController::class, 'index'])
@@ -131,3 +147,6 @@ Route::get('/', [ChaptersController::class, 'index'])
 
 Route::get('/chapters/{id}', [ChaptersController::class, 'show'])
     ->name('chapters.show');
+
+Route::get('/bosses/{id}', [BossesController::class, 'show'])
+    ->name('bosses.show');

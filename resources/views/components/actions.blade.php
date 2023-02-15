@@ -1,4 +1,4 @@
-<div class="w-full flex flex-col items-center gap-1 mb-4 sm:flex-row sm:justify-start sm:gap-2">
+<div class="w-full mt-8 flex flex-col items-center gap-1 mb-4 sm:flex-row sm:justify-start sm:gap-2">
   <a class="w-full block text-center cursor-pointer bg-orange-400 hover:bg-orange-500 duration-150 py-1 font-bold text-gray-200 rounded-sm sm:w-40" href="{{ '/' . $type . '/edit/' . $id }}">
     <i class="bi bi-pencil-fill mr-1"></i> Edit
   </a>
