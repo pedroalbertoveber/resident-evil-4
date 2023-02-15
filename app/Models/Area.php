@@ -20,4 +20,5 @@ class Area extends Model
     {
         return $this->hasMany(Chapter::class, 'area_id');
     }
+
 }

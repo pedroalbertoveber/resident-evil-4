@@ -37,7 +37,7 @@ class EloquentAreaRepository implements AreaRepository {
   
   public function show(int $id): Area
   {
-    $area = Area::findOrFail($id);
+    $area = Area::where('id', $id)->with('chapters')->first();
 
     return $area;
   }
