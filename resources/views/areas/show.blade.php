@@ -14,7 +14,7 @@
         <p class="text-lg font-bold mt-2">Chapters in {{ $area->name }}:</p>
         <ul class="py-4 flex flex-col flex-wrap w-full max-h-[250px] sm:max-h-[150px]">
           @foreach($area->chapters as $chapter)
-            <li class="pb-2">
+            <li class="pb-2 w-1/4">
               <a href="{{ route('chapters.show', $chapter->id) }}" class="link-default">
                 <i class="bi bi-record-fill"></i> Chapter {{ $chapter->chapter }} - {{ $chapter->sub_chapter }}
               </a>

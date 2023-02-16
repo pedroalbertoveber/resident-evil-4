@@ -5,16 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\ChapterRepository;
 use App\Http\Requests\ChapterRequest;
+use Illuminate\Http\Request;
 
 class ChaptersController extends Controller
 {
     public function __construct(private ChapterRepository $repository)
     {}
 
-    public function index()
+    public function index(Request $request)
     {
-        $chapters = $this->repository->index();
-        return view('home')->with('chapters', $chapters);
+        if(!$request->query('chapter')){
+            return to_route('home', ['chapter' => '1']);
+        }
+
+        $selected = $request->query('chapter');
+
+        $chapters = $this->repository->index($request);
+        return view('home', compact('chapters', 'selected' ));
     }
 
     public function create()
@@ -43,8 +50,8 @@ class ChaptersController extends Controller
     {
         $chapter = $this->repository->update($request, $id);
 
-        return to_route('home')
-            ->with('success', "Chapter $chapter->chapter / $chapter->sub_chapter updated successfully!");
+        return to_route('home', ['chapter' => $chapter->chapter ])
+            ->with('success', "Chapter $chapter->chapter - $chapter->sub_chapter updated successfully!");
     }
 
     public function edit(int $id)

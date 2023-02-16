@@ -29,7 +29,7 @@ class CharactersController extends Controller
         $character = $this->repository->store($request);
 
         return to_route('characters.index')
-            ->with('success', 'Character '. $character . ' created successfully!');
+            ->with('success', 'Character '. $character->name . ' created successfully!');
     }
 
     public function show(int $id)
@@ -52,7 +52,7 @@ class CharactersController extends Controller
         $character = $this->repository->update($request, $id);
 
         return to_route('characters.index')
-            ->with('success', 'Character ' . $character->name . ' Updated successfully!');
+            ->with('success', 'Character ' . $character->name . ' updated successfully!');
     }
 
     public function delete(int $id)

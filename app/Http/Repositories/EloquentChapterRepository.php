@@ -4,17 +4,20 @@ namespace App\Http\Repositories;
 use App\Http\Requests\ChapterRequest;
 use App\Models\Area;
 use App\Models\Chapter;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class EloquentChapterRepository implements ChapterRepository {
 
-  public function index()
+  public function index(Request $request)
   {
+    $chapter = $request->query('chapter');
+
     $chapters = DB::table('chapters')
-      ->orderBy('chapter', 'asc')
+      ->where('chapter', $chapter)
       ->orderBy('sub_chapter', 'asc')
       ->get();
-    
+
     return $chapters;
   }
 
@@ -74,6 +77,7 @@ class EloquentChapterRepository implements ChapterRepository {
       $chapter->chapter = $data['chapter'];
       $chapter->sub_chapter = $data['sub_chapter'];
       $chapter->area_id = $data['area_id'];
+      $chapter->description = $data['description'];
 
       $chapter->update();
       return $chapter;

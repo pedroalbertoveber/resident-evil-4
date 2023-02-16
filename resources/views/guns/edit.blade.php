@@ -23,6 +23,7 @@
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Shotgun" name="type" @if ($gun->type === 'Shotgun') checked @endif>Shotgun</li>
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Submachine gun" name="type" @if ($gun->type === 'Submachine gun') checked @endif>Submachine gun</li>
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Rifle" name="type" @if ($gun->type === 'Rifle') checked @endif>Rifle</li>
+          <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Magnum" name="type" @if ($gun->type === 'Magnum') checked @endif>Magnum</li>
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Special" name="type" @if ($gun->type === 'Special') checked @endif>Special</li>
         </ul>
       </div>

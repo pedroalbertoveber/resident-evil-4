@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('resume');
+            $table->mediumText('resume');
             $table->timestamps();
         });
     }

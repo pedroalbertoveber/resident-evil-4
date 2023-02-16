@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\BossRepository;
 use App\Http\Requests\BossRequest;
-use Illuminate\Http\Request;
 
 class BossesController extends Controller
 {

@@ -22,6 +22,7 @@
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Shotgun" name="type">Shotgun</li>
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Submachine gun" name="type">Submachine gun</li>
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Rifle" name="type">Rifle</li>
+          <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Magnum" name="type">Magnum</li>
           <li class="text-lg font-bold"><input class="mr-1 cursor-pointer" type="radio" value="Special" name="type">Special</li>
         </ul>
       </div>
