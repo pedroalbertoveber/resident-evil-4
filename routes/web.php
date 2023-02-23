@@ -8,143 +8,153 @@ use App\Http\Controllers\EnemiesController;
 use App\Http\Controllers\GunsController;
 use App\Http\Controllers\TreasuresController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\Autenticator;
 use Illuminate\Support\Facades\Route;
 
 // PRIVATE ROUTES
-
-Route::post('/users/logout', [UserController::class, 'logout'])
+Route::middleware(Autenticator::class)->group(function() {
+    Route::post('/users/logout', [UserController::class, 'logout'])
     ->name('users.logout');
 
-Route::get('/characters/create', [CharactersController::class, 'create'])
-    ->name('characters.create');
+    // CHARACTERS
+    Route::get('/characters/create', [CharactersController::class, 'create'])
+        ->name('characters.create');
 
-Route::post('/characters/store', [CharactersController::class, 'store'])
-    ->name('characters.store');
+    Route::post('/characters/store', [CharactersController::class, 'store'])
+        ->name('characters.store');
 
-Route::get('/characters/edit/{id}', [CharactersController::class, 'edit'])
-    ->name('characters.edit');
+    Route::get('/characters/edit/{id}', [CharactersController::class, 'edit'])
+        ->name('characters.edit');
 
-Route::put('/characters/update/{id}', [CharactersController::class, 'update'])
-    ->name('characters.update');
+    Route::put('/characters/update/{id}', [CharactersController::class, 'update'])
+        ->name('characters.update');
 
-Route::delete('/characters/delete/{id}', [CharactersController::class, 'delete'])
-    ->name('characters.delete');
+    Route::delete('/characters/delete/{id}', [CharactersController::class, 'delete'])
+        ->name('characters.delete');
 
-Route::get('/areas/create', [AreasController::class, 'create'])
-    ->name('areas.create');
+    // AREAS
+    Route::get('/areas/create', [AreasController::class, 'create'])
+        ->name('areas.create');
 
-Route::post('/areas/store', [AreasController::class, 'store'])
-    ->name('areas.store');
+    Route::post('/areas/store', [AreasController::class, 'store'])
+        ->name('areas.store');
 
-Route::get('/areas/edit/{id}', [AreasController::class, 'edit'])
-    ->name('areas.edit');
+    Route::get('/areas/edit/{id}', [AreasController::class, 'edit'])
+        ->name('areas.edit');
 
-Route::put('/areas/update/{id}', [AreasController::class, 'update'])
-    ->name('areas.update');
+    Route::put('/areas/update/{id}', [AreasController::class, 'update'])
+        ->name('areas.update');
 
-Route::delete('/areas/delete/{id}', [AreasController::class, 'delete'])
-    ->name('areas.delete');
+    Route::delete('/areas/delete/{id}', [AreasController::class, 'delete'])
+        ->name('areas.delete');
 
-Route::get('/chapters/edit/{id}', [ChaptersController::class, 'edit'])
-    ->name('chapters.edit');
+    // CHAPTERS
+    Route::get('/chapters/edit/{id}', [ChaptersController::class, 'edit'])
+        ->name('chapters.edit');
 
-Route::get('/chapters/create', [ChaptersController::class, 'create'])
-    ->name('chapters.create');
+    Route::get('/chapters/create', [ChaptersController::class, 'create'])
+        ->name('chapters.create');
 
-Route::post('/chapters/store', [ChaptersController::class, 'store'])
-    ->name('chapters.store');
+    Route::post('/chapters/store', [ChaptersController::class, 'store'])
+        ->name('chapters.store');
 
-Route::put('/chapters/update/{id}', [ChaptersController::class, 'update'])
-    ->name('chapters.update');
+    Route::put('/chapters/update/{id}', [ChaptersController::class, 'update'])
+        ->name('chapters.update');
 
-Route::delete('/chapters/delete/{id}', [ChaptersController::class, 'delete'])
-    ->name('chapters.delete');
-
-Route::get('/treasures/create', [TreasuresController::class, 'create'])
-    ->name('treasures.create');
-
-Route::get('/treasures/edit/{id}', [TreasuresController::class, 'edit'])
-    ->name('treasures.edit');
-
-Route::post('/treasures/store', [TreasuresController::class, 'store'])
-    ->name('treasures.store');
-
-Route::put('/treasures/update/{id}', [TreasuresController::class, 'update'])
-    ->name('treasures.update');
-
-Route::delete('/treasures/delete/{id}', [TreasuresController::class, 'delete'])
-    ->name('treasures.delete');
-
-Route::get('/guns', [GunsController::class, 'index'])
-    ->name('guns.index');
-
-Route::get('/guns/edit/{id}', [GunsController::class, 'edit'])
-    ->name('guns.edit');
-
-Route::get('/guns/create', [GunsController::class, 'create'])
-    ->name('guns.create');
-
-Route::get('/guns/{id}', [GunsController::class, 'show'])
-    ->name('guns.show');
-
-Route::put('/guns/update/{id}', [GunsController::class, 'update'])
-    ->name('guns.update');
-
-Route::post('/guns/store', [GunsController::class, 'store'])
-    ->name('guns.store');
+    Route::delete('/chapters/delete/{id}', [ChaptersController::class, 'delete'])
+        ->name('chapters.delete');
     
-Route::delete('/guns/delete/{id}', [GunsController::class, 'delete'])
-    ->name('guns.delete');
+    // TREASURES
+    Route::get('/treasures/create', [TreasuresController::class, 'create'])
+        ->name('treasures.create');
 
-Route::get('/bosses/create', [BossesController::class, 'create'])
-    ->name('bosses.create');
+    Route::get('/treasures/edit/{id}', [TreasuresController::class, 'edit'])
+        ->name('treasures.edit');
 
-Route::get('/bosses/edit/{id}', [BossesController::class, 'edit'])
-    ->name('bosses.edit');
+    Route::post('/treasures/store', [TreasuresController::class, 'store'])
+        ->name('treasures.store');
 
-Route::put('/bosses/update/{id}', [BossesController::class, 'update'])
-    ->name('bosses.update');
+    Route::put('/treasures/update/{id}', [TreasuresController::class, 'update'])
+        ->name('treasures.update');
 
-Route::post('/bosses/store', [BossesController::class, 'store'])
-    ->name('bosses.store');
+    Route::delete('/treasures/delete/{id}', [TreasuresController::class, 'delete'])
+        ->name('treasures.delete');
 
-Route::delete('/bosses/delete/{id}', [BossesController::class, 'delete'])
-    ->name('bosses.delete');
+    
+    // WEAPONS
+    Route::get('/guns', [GunsController::class, 'index'])
+        ->name('guns.index');
 
-Route::get('/enemies/create', [EnemiesController::class, 'create'])
-    ->name('enemies.create');
+    Route::get('/guns/edit/{id}', [GunsController::class, 'edit'])
+        ->name('guns.edit');
 
-Route::get('/enemies/edit/{id}', [EnemiesController::class, 'edit'])
-    ->name('enemies.edit');
+    Route::get('/guns/create', [GunsController::class, 'create'])
+        ->name('guns.create');
 
-Route::put('/enemies/update/{id}', [EnemiesController::class, 'update'])
-    ->name('enemies.update');
+    Route::get('/guns/{id}', [GunsController::class, 'show'])
+        ->name('guns.show');
 
-Route::post('/enemies/store', [EnemiesController::class, 'store'])
-    ->name('enemies.store');
+    Route::put('/guns/update/{id}', [GunsController::class, 'update'])
+        ->name('guns.update');
 
-Route::delete('/enemies/delete/{id}', [EnemiesController::class, 'delete'])
-    ->name('enemies.delete');
+    Route::post('/guns/store', [GunsController::class, 'store'])
+        ->name('guns.store');
+        
+    Route::delete('/guns/delete/{id}', [GunsController::class, 'delete'])
+        ->name('guns.delete');
+    
+    // BOSSES
+    Route::get('/bosses/create', [BossesController::class, 'create'])
+        ->name('bosses.create');
 
-// PUBLIC ROUTES
+    Route::get('/bosses/edit/{id}', [BossesController::class, 'edit'])
+        ->name('bosses.edit');
 
-Route::get('/areas', [AreasController::class, 'index'])
-    ->name('areas.index');
+    Route::put('/bosses/update/{id}', [BossesController::class, 'update'])
+        ->name('bosses.update');
 
-Route::get('/areas/{id}', [AreasController::class, 'show'])
-    ->name('areas.show');
+    Route::post('/bosses/store', [BossesController::class, 'store'])
+        ->name('bosses.store');
 
+    Route::delete('/bosses/delete/{id}', [BossesController::class, 'delete'])
+        ->name('bosses.delete');
+    
+    // ENEMIES
+    Route::get('/enemies/create', [EnemiesController::class, 'create'])
+        ->name('enemies.create');
+
+    Route::get('/enemies/edit/{id}', [EnemiesController::class, 'edit'])
+        ->name('enemies.edit');
+
+    Route::put('/enemies/update/{id}', [EnemiesController::class, 'update'])
+        ->name('enemies.update');
+
+    Route::post('/enemies/store', [EnemiesController::class, 'store'])
+        ->name('enemies.store');
+
+    Route::delete('/enemies/delete/{id}', [EnemiesController::class, 'delete'])
+        ->name('enemies.delete');
+});
+
+// AUTH ROUTES
 Route::get('/users/register', [UserController::class, 'register'])
     ->name('users.register');
 
 Route::get('/users/login', [UserController::class, 'login'])
-    ->name('users.login');
+    ->name('login');
 
 Route::post('/users/register', [UserController::class, 'signUp'])
     ->name('users.signUp');
 
 Route::post('/users/signIn', [UserController::class, 'signIn'])
     ->name('users.signIn');
+
+// PUBLIC ROUTES
+Route::get('/areas', [AreasController::class, 'index'])
+    ->name('areas.index');
+
+Route::get('/areas/{id}', [AreasController::class, 'show'])
+    ->name('areas.show');
 
 Route::get('/characters', [CharactersController::class, 'index'])
     ->name('characters.index');
@@ -166,3 +176,4 @@ Route::get('/chapters/{id}', [ChaptersController::class, 'show'])
 
 Route::get('/bosses/{id}', [BossesController::class, 'show'])
     ->name('bosses.show');
+

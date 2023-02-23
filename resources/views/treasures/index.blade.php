@@ -14,6 +14,8 @@
         </a>
       @endforeach
     </div>
+    @auth
     <p>Do you want to insert a new treasure? <a href="{{ route('treasures.create') }}" class="link-default">Click here</a></p>
+    @endauth
   </section>
 </x-layout>

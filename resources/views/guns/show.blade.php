@@ -16,7 +16,9 @@
         <p class="mb-2 text-lg"><strong class="mr-2 font-bold">Initial Price:</strong>{{ $gun->initial_price}}pts</p>
       </div>
     </div>
+    @auth
     <x-actions type="guns" :id="$gun->id" />
+    @endauth
     <p>Do you want to go back to all weapons? <a href="{{ route('guns.index') }}" class='link-default'>Click here</a></p>
   </section>
 </x-layout>

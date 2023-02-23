@@ -14,6 +14,8 @@
         </a>
       @endforeach
     </div>
+    @auth
     <p>Do you want to insert a new gun? <a href="{{ route('guns.create') }}" class="link-default">Click here</a></p>
+    @endauth
   </section>
 </x-layout>

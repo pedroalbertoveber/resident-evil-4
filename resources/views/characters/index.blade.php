@@ -14,6 +14,8 @@
         </a>
       @endforeach
     </div>
-    <p>Do you want to insert a new character? <a href="{{ route('characters.create') }}" class="link-default">Click here</a></p>
+    @auth
+      <p>Do you want to insert a new character? <a href="{{ route('characters.create') }}" class="link-default">Click here</a></p>
+    @endauth
   </section>
 </x-layout>

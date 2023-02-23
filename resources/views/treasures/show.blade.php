@@ -20,7 +20,9 @@
         </ul>
       </div>
     </div>
+    @auth
     <x-actions type="treasures" :id="$treasure->id" />
+    @endauth
     <p>Do you want to go back to all treasures? <a href="{{ route('treasures.index') }}" class='link-default'>Click here</a></p>
   </section>
 </x-layout>

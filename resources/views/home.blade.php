@@ -80,7 +80,9 @@
           @endif
         </ul>
       </div>
+      @auth
       <p class="mt-2">Do you want to add a new chapter? <a href="{{ route('chapters.create')}}" class="link-default">Click here</a></p>
+      @endauth
     </div>
   </section>
 </x-layout>

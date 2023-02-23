@@ -14,6 +14,8 @@
         </a>
       @endforeach
     </div>
+    @auth
     <p>Do you want to insert a new area? <a href="{{ route('areas.create') }}" class="link-default">Click here</a></p>
+    @endauth
   </section>
 </x-layout>

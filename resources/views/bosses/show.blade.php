@@ -11,7 +11,10 @@
         <p class="text-lg mb-4"><strong>Description: </strong>{{$boss->description}}</p>
       </div>
     </div>
+    @auth
     <x-actions type="bosses" :id="$boss->id" />
+    @endauth
     <p>Do you want to go back to area? <a href="{{ route('areas.show', $boss->area_id) }}" class='link-default'>Click here</a></p>
+    
   </section>
 </x-layout>

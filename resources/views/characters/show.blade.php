@@ -12,7 +12,9 @@
 
       </div>
     </div>
+    @auth
     <x-actions type="characters" :id="$character->id" />
+    @endauth
     <p>Do you want to go back to all characters? <a href="{{ route('characters.index') }}" class='link-default'>Click here</a></p>
   </section>
 </x-layout>

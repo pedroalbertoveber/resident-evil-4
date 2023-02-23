@@ -22,6 +22,7 @@
           <img src="/img/resident-evil-4-logo.png" alt="Resident Evil 4 Logo" class="w-60 sm:w-40">
         </figure>
 
+        @auth
         <form class="w-full sm:w-1/2 flex justify-end" action="{{ route('users.logout') }}" method="POST">
           @csrf
           
@@ -31,6 +32,9 @@
           </button>
 
         </form>
+        @else
+          <a href="{{ route('login')}}" class="link-default">Login</a>
+        @endauth
 
       </div>
       

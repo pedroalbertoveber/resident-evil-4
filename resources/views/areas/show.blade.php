@@ -37,7 +37,9 @@
           </li>
         @endforeach
       </ul>
+      @auth
       <p class="mt-4">Do you want to add a Boss for this area? <a href="{{ route('bosses.create') }}" class="link-default">Click here</a></p>
+      @endauth
     </div>
 
     <div class="sub-division">
@@ -53,7 +55,7 @@
               <h4 class="font-bold text-md">{{ $enemy->name }}</h4>
               <span class="text-sm text-gray-400">{{ $enemy->difficulty }}</span>
             </div>
-
+            @auth
             <div class="absolute -translate-y-1/2 top-1/2 right-8 flex gap-2">
               <a href="{{ route('enemies.edit', $enemy->id )}}" class="flex items-center justify-center px-2 py-1 rounded-full bg-orange-400 hover:bg-orange-500 duration-100 cursor-pointer"><i class="bi bi-pencil-fill text-sm"></i></a>
               <form action="{{ route('enemies.delete', $enemy->id) }}" method="POST">
@@ -63,12 +65,15 @@
                 <button class="flex items-center justify-center px-2 py-1 rounded-full bg-red-500 hover:bg-red-600 duration-100"><i class="bi bi-trash3-fill"></i></button>
               </form>
             </div>
+            @endauth
           </li>
         @endforeach
       </ul>
+      @auth
       <p class="mt-4">Do you want to add a enemy for this area? <a href="{{ route('enemies.create') }}" class="link-default">Click here</a></p>
     </div>
     <x-actions type="areas" :id="$area->id"/>
+      @endauth
     <p>Do you want to go back to all areas? <a href="{{ route('areas.index') }}" class='link-default'>Click here</a></p>
   </section>
 </x-layout>

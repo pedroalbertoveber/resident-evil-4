@@ -22,5 +22,5 @@
       Sing Up
     </button>
   </form>
-  <p class="text-gray-200 block w-full max-w-[600px] mx-auto">Do you already have an account? <a href="{{ route('users.login')}}" class="link-default">Click here</a></p>
+  <p class="text-gray-200 block w-full max-w-[600px] mx-auto">Do you already have an account? <a href="{{ route('login')}}" class="link-default">Click here</a></p>
 </x-auth>

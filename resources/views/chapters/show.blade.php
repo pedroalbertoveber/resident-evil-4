@@ -16,7 +16,9 @@
         <p class="text-lg mb-4"><strong>Description: </strong>{{$chapter->description}}</p>
       </div>
     </div>
+    @auth
     <x-actions type="chapters" :id="$chapter->id" />
+    @endauth
     <p>Do you want to go back to menu? <a href="{{ route('home') }}" class='link-default'>Click here</a></p>
   </section>
 </x-layout>
