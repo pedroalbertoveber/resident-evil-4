@@ -4,6 +4,7 @@ use App\Http\Controllers\AreasController;
 use App\Http\Controllers\BossesController;
 use App\Http\Controllers\ChaptersController;
 use App\Http\Controllers\CharactersController;
+use App\Http\Controllers\EnemiesController;
 use App\Http\Controllers\GunsController;
 use App\Http\Controllers\TreasuresController;
 use App\Http\Controllers\UserController;
@@ -109,6 +110,21 @@ Route::post('/bosses/store', [BossesController::class, 'store'])
 
 Route::delete('/bosses/delete/{id}', [BossesController::class, 'delete'])
     ->name('bosses.delete');
+
+Route::get('/enemies/create', [EnemiesController::class, 'create'])
+    ->name('enemies.create');
+
+Route::get('/enemies/edit/{id}', [EnemiesController::class, 'edit'])
+    ->name('enemies.edit');
+
+Route::put('/enemies/update/{id}', [EnemiesController::class, 'update'])
+    ->name('enemies.update');
+
+Route::post('/enemies/store', [EnemiesController::class, 'store'])
+    ->name('enemies.store');
+
+Route::delete('/enemies/delete/{id}', [EnemiesController::class, 'delete'])
+    ->name('enemies.delete');
 
 // PUBLIC ROUTES
 

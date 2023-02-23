@@ -2,7 +2,7 @@
   <section class="w-full">
     <figure class="thumbnail">
       <img src="/img/characters-bg.jpg" alt="All characters" class="thumbnail-img">
-      <h1 class="thumbnail-title">Create Character</h1>
+      <h1 class="thumbnail-title">{{ $boss->name }}</h1>
     </figure>
     <div class="py-8 w-full flex flex-col sm:flex sm:flex-row">
       <img src="{{ asset('storage/' . $boss->image)}}" alt="{{ $boss->name }}" class="object-cover w-full sm:w-1/2 rounded-lg">
